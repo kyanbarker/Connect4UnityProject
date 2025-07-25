@@ -67,11 +67,4 @@ This project is open-source and free to use under the MIT License.
 
 ---
 
-## 📬 Contact
-
-Created by **Kyan Sung-Jin Barker**  
-📎 [LinkedIn](https://www.linkedin.com/in/kyan-barker)
-
----
-
 Made with Unity.

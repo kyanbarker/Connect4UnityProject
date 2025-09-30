@@ -1,70 +1,56 @@
-# 🎮 Connect 4 in Unity
+# Connect 4 Unity Game
 
-This is a fully functional **Connect 4** game built in **Unity**, featuring a complete game board, player interaction, color switching, and real-time win detection. The project is designed using clean object-oriented architecture with modular and reusable components.
+A complete Connect 4 game built in Unity with mouse controls, win detection, and turn-based gameplay.
 
----
+## Demo Video
 
-## 🚀 Features
+Watch the gameplay demonstration: https://www.youtube.com/watch?v=Koau-1sKJoA&list=PLKz7QOwPaa35za3Q2WB6QacrwIFppwwSh&index=5
 
-- 🧠 **Automatic Win Detection**: Checks for vertical, horizontal, and diagonal connect-4s every turn.
-- 🔄 **Player Turn Switching**: Alternates between red and yellow players.
-- 👁️ **Token Preview**: See where your token will land before placing it.
-- 📢 **UI Messaging**: Displays current player and win announcements via TextMeshPro.
+## Features
 
----
+- Classic 7x6 Connect 4 board
+- Two-player alternating turns (Red vs Yellow)
+- Real-time win detection for horizontal, vertical, and diagonal connections
+- Preview token shows where your piece will drop
+- Game end detection and winner announcement
+- Clean UI with TextMeshPro messaging
 
-## 🧩 Scripts Overview
+## How to Play
 
-### `Main.cs`
-Handles core gameplay logic and board state:
-- `Drop(int x)`: Drops a token into a column and checks for a win.
-- `IsConnect4Path(Vector2 path)`: Scans for 4-in-a-row patterns.
-- `SwitchColor()`: Alternates the player’s color and updates the preview.
-- Manages instantiation of the board and preview token.
-- Updates UI using a TextMeshPro message system.
+1. Open the project in Unity
+2. Play the SampleScene
+3. Hover over columns to see token preview
+4. Click to drop your token
+5. First player to connect 4 tokens wins
 
-### `Token.cs`
-Controls token visuals:
-- Sets token `Color` and `Opacity` through a `SpriteRenderer` component.
-- Initializes each token on instantiation.
+## Project Structure
 
-### `MouseObserver.cs`
-Enables interactive column behavior:
-- Detects mouse hover and updates the preview token's position.
-- Detects clicks to drop a token into the hovered column.
-- Disables itself when the game ends by deactivating the GameObject.
+**Scripts:**
+- `Main.cs` - Core game logic, board management, and win detection
+- `Token.cs` - Individual token visual properties and color management
+- `MouseObserver.cs` - Mouse input handling for column selection
 
----
+**Prefabs:**
+- `Token.prefab` - Reusable token GameObject
+- `MouseObserver.prefab` - Column interaction handler
 
-## 📹 Demo Video
+## Technical Details
 
-[![Watch the demo video](https://img.youtube.com/vi/Koau-1sKJoA/hqdefault.jpg)](https://youtu.be/Koau-1sKJoA)
+The game uses a 2D array to track token positions and implements efficient win detection by checking all possible 4-in-a-row patterns. The preview system uses a semi-transparent token that follows mouse movement. Game state is managed through a singleton pattern with the Main class.
 
-Click the image above to watch a short gameplay demonstration.
+## Setup Instructions
 
----
+1. Clone or download the repository
+2. Open in Unity (2020.3 LTS or newer recommended)
+3. Open `Assets/Scenes/SampleScene.unity`
+4. Press Play to start the game
 
-## 🧪 How to Run
+## Key Methods
 
-1. Clone the repo or download the ZIP
-2. Open the project in **Unity Hub**
-3. Hit **Play** in the Unity Editor
-4. Click on a column to drop tokens — try to connect four in a row!
+- `Drop(int x)` - Places token and checks for wins
+- `IsConnect4` - Scans board for winning patterns
+- `SwitchColor()` - Alternates between players
 
----
+## License
 
-## 📝 Future Improvements
-
-- Add AI opponent for single-player mode
-- Add score tracking and reset functionality
-- Add SFX/animation for drops and wins
-
----
-
-## 🤝 License
-
-This project is open-source and free to use under the MIT License.
-
----
-
-Made with Unity.
+Open source - feel free to use and modify.
